@@ -14,8 +14,8 @@ function createGrid() {
     square.classList.add('square');
     grid.appendChild(square);
     if (size<=100) {
-        square.style.width=`${470/size}px`;
-        square.style.height=`${470/size}px`;
+        square.style.width=`${510/size}px`;
+        square.style.height=`${510/size}px`;
     }
     }
 }
