@@ -1,15 +1,36 @@
+/*title*/
+h1 {
+    margin: 10px;
+    text-align: center;
+    color: pink;
+    font-family: cursive;
+    font-size: 65px;
+}
+
+/*option choices*/
+.middle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choice-buttons {
+    display: grid;
+}
+
+
+/*grid*/
 .grid-container {
     display: grid;
     height: 510px;
     width: 510px;
-    border: 1px solid royalblue;
+    border: 5px solid black;
     justify-items: center;
-    padding: 5px;
+    padding: 1px;
     gap: 0;
 }
 
 .square {
-    background-color: red;
-    border: 0.001px solid white;
+    background-color: white;
 }
 
