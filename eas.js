@@ -4,6 +4,23 @@ let size= prompt ("Give me a size.")
 // choices
 const reset=document.querySelector('#reset')
 
+const eraser= document.querySelector('#eraser')
+let eraserClick;
+eraser.addEventListener ('click', () => {
+    eraserClick=true;
+})
+
+const colorPicker = document.getElementById("colorpicker");
+let selectedColor = colorPicker.value;
+let color;
+colorPicker.addEventListener ('change', () => {
+    selectedColor=colorPicker.value;
+    console.log(selectedColor);
+    color=true;
+    eraserClick=false;
+})
+
+
 // function to create a grid 
 const middleContainer=document.querySelector('.middle-container');
 const grid= document.createElement('div');
@@ -23,12 +40,23 @@ function createGrid() {
     }
 
     square.addEventListener('mouseover',()=> {
-        square.style.backgroundColor='red';
+        if (eraserClick==true) {
+            square.style.backgroundColor='';
+        }
+
+        else if (color==true) {
+            square.style.backgroundColor=selectedColor;
+        }
+
+        else {
+            square.style.backgroundColor='black';
+        }
     })
 
     reset.addEventListener ('click', ()=> {
         square.style.backgroundColor='';
     })
+
     }
 }
 

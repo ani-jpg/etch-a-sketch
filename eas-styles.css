@@ -1,6 +1,6 @@
 /*title*/
 h1 {
-    margin: 10px;
+    margin: 8px;
     text-align: center;
     color: pink;
     font-family: cursive;
@@ -16,18 +16,35 @@ h1 {
 
 .choice-buttons {
     display: grid;
+    gap: 6px;
+    grid-template-columns: 1fr 1fr;
+}
+
+#color-choice {
+    grid-row: 1;
+    grid-column: 1/3;
+    text-align: center;
+    font-size: 22px;
 }
 
 
-/*grid*/
+button {
+    font-size: 22px;
+    border: 2px solid pink;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+/*grid GAP RETURNED TRY 56 size sad face */
 .grid-container {
     display: grid;
     height: 510px;
     width: 510px;
-    border: 5px solid black;
+    border: 1px solid black;
     justify-items: center;
     padding: 1px;
     gap: 0;
+    margin-left: 25px;
 }
 
 .square {
