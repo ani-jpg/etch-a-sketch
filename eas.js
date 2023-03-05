@@ -37,6 +37,9 @@ middleContainer.appendChild(grid);
 grid.style.gridTemplateColumns=`repeat(${size}, 1fr)`;
 grid.style.gridTemplateRows=`repeat(${size}, 1fr)`;
 
+
+let hover=true;
+
 function createGrid() {
     for (i=0; i<size*size; i++) {
     const square=document.createElement('div');
@@ -46,8 +49,8 @@ function createGrid() {
         square.style.width=`${510/size}px`;
         square.style.height=`${510/size}px`;
     }
-
-    square.addEventListener('mouseover',()=> {
+    
+    function hoverFunction () {
         if (eraserClick==true) {
             square.style.backgroundColor='';
         }
@@ -63,7 +66,27 @@ function createGrid() {
         else {
             square.style.backgroundColor= 'black';
         }
+    }
+
+    square.addEventListener('mouseover', () => {
+        if (hover==true) {
+            hoverFunction ();
+            square.addEventListener('click', () => {
+                hover=false;
+                square.removeEventListener('mouseover', hoverFunction);
+                console.log("HI")
+            })
+        }
+        else if (hover==false) {
+            square.addEventListener('click', () => {
+                hover=true;
+                console.log("BYE")
+            })
+        }
     })
+
+
+    
 
     reset.addEventListener ('click', ()=> {
         square.style.backgroundColor='';
@@ -72,8 +95,10 @@ function createGrid() {
         color=false;
     })
 
+    
     }
 }
+
 
 createGrid(size);
 console.log(size);
