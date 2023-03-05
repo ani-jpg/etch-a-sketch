@@ -20,8 +20,16 @@ colorPicker.addEventListener ('change', () => {
     eraserClick=false;
 })
 
+const rainbowChoice= document.querySelector('#rainbow');
+let rainbow;
+rainbowChoice.addEventListener('click', () => {
+    rainbow=true;
+    color=false;
+    eraserClick=false;
+})
 
-// function to create a grid 
+
+// function to create the interactive grid 
 const middleContainer=document.querySelector('.middle-container');
 const grid= document.createElement('div');
 grid.classList.add('grid-container');
@@ -48,13 +56,20 @@ function createGrid() {
             square.style.backgroundColor=selectedColor;
         }
 
+        else if (rainbow==true) {
+            square.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        }
+
         else {
-            square.style.backgroundColor='black';
+            square.style.backgroundColor= 'black';
         }
     })
 
     reset.addEventListener ('click', ()=> {
         square.style.backgroundColor='';
+        rainbow=false;
+        eraserClick=false;
+        color=false;
     })
 
     }
