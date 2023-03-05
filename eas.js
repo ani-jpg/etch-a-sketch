@@ -1,8 +1,8 @@
 // prompt function to get the number of grid squares
 let size= prompt ("Give me a size.")
 
-// buttons for each mode of hover effect 
-
+// choices
+const reset=document.querySelector('#reset')
 
 // function to create a grid 
 const middleContainer=document.querySelector('.middle-container');
@@ -24,7 +24,10 @@ function createGrid() {
 
     square.addEventListener('mouseover',()=> {
         square.style.backgroundColor='red';
+    })
 
+    reset.addEventListener ('click', ()=> {
+        square.style.backgroundColor='';
     })
     }
 }
